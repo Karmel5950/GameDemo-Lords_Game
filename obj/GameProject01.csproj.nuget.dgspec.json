@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\CodeWorkSpace\\GameProject01\\GameProject01.csproj": {}
+    "c:\\CodeWorkSpace\\GameProject01\\GameDemo-Lords_Game\\GameProject01.csproj": {}
   },
   "projects": {
-    "c:\\CodeWorkSpace\\GameProject01\\GameProject01.csproj": {
+    "c:\\CodeWorkSpace\\GameProject01\\GameDemo-Lords_Game\\GameProject01.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\CodeWorkSpace\\GameProject01\\GameProject01.csproj",
+        "projectUniqueName": "c:\\CodeWorkSpace\\GameProject01\\GameDemo-Lords_Game\\GameProject01.csproj",
         "projectName": "GameProject01",
-        "projectPath": "c:\\CodeWorkSpace\\GameProject01\\GameProject01.csproj",
+        "projectPath": "c:\\CodeWorkSpace\\GameProject01\\GameDemo-Lords_Game\\GameProject01.csproj",
         "packagesPath": "C:\\Users\\gaoan\\.nuget\\packages\\",
-        "outputPath": "c:\\CodeWorkSpace\\GameProject01\\obj\\",
+        "outputPath": "c:\\CodeWorkSpace\\GameProject01\\GameDemo-Lords_Game\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -2,7 +2,7 @@ using System.Linq.Expressions;
 using BaseLayer;
 
 public class Start{
-    static void Main() {
+    static void Start_1() {
 		RegisterSystem registerSystem = RegisterSystem.Instance;
 		Func<RegisterSystem,bool> filter = x => x.GetTest() == 1;
 		DateTime beforeDT = System.DateTime.Now;

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\CodeWorkSpace\\GameProject01\\GameProject01.csproj",
+      "projectUniqueName": "c:\\CodeWorkSpace\\GameProject01\\GameDemo-Lords_Game\\GameProject01.csproj",
       "projectName": "GameProject01",
-      "projectPath": "C:\\CodeWorkSpace\\GameProject01\\GameProject01.csproj",
+      "projectPath": "c:\\CodeWorkSpace\\GameProject01\\GameDemo-Lords_Game\\GameProject01.csproj",
       "packagesPath": "C:\\Users\\gaoan\\.nuget\\packages\\",
-      "outputPath": "C:\\CodeWorkSpace\\GameProject01\\obj\\",
+      "outputPath": "c:\\CodeWorkSpace\\GameProject01\\GameDemo-Lords_Game\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
