@@ -1,15 +1,18 @@
 
-using System.Linq.Expressions;
-using System;
+using System.Collections.Concurrent;
 namespace BaseLayer
 {
     internal class RegisterSystem{
         private static RegisterSystem? _instance = null;
         public Dictionary<string,Dictionary<string,object>> registerDictionary{get;}
-        private IDManager? idManager;
+        private IDManager idManager;
+        private ConcurrentQueue<object> registerQueue;
         private RegisterSystem()
         {
             registerDictionary = new Dictionary<string,Dictionary<string,object>>();
+            registerQueue = new ConcurrentQueue<object>();
+            idManager = IDManager.Instance;
+            Register(idManager);
         }
         public static RegisterSystem Instance
         {
@@ -20,13 +23,16 @@ namespace BaseLayer
                     return _instance;
                 }
                 _instance = new RegisterSystem();
-                _instance.idManager = IDManager.Instance;
-                RegisterSystem.Instance.Register(_instance.idManager);
-                RegisterSystem.Instance.Register(_instance);
+                Instance.Register(_instance);
                 return _instance;
             }
         }
-        public void Register(object instance)
+        public void Register(object instance){
+            // registerQueue.Enqueue(instance);
+            SingleRegister(instance);
+        }
+
+        private void SingleRegister(object instance)
         {
             string className = instance.GetType().Name;
             
