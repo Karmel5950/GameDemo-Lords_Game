@@ -44,8 +44,6 @@ namespace ApplicationLayer.BattleSystem
             BattleList.Add(newBattle);
             return newBattle;
         }
-
-        
     }
 
       

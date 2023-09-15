@@ -2,7 +2,6 @@ namespace ApplicationLayer.BattleSystem
 {
     public class BattleTeam
     {
-        public int Id { get;private set; }
         public List<BattleUnit> BattleUnitsList;
         public List<BattleTeam> EnemyTeamList;
         public List<BattleUnit> LiveList;
@@ -17,14 +16,19 @@ namespace ApplicationLayer.BattleSystem
                 return false;
             }
         }
-        public BattleTeam(int id)
+        public BattleTeam()
         {
-            Id = id;
             BattleUnitsList = new List<BattleUnit>();
             EnemyTeamList = new List<BattleTeam>();
             LiveList = new List<BattleUnit>();
             DeadList = new List<BattleUnit>();
         }
+        public BattleTeam(List<BattleUnit> battleUnits):this()
+        {
+            AddBattleUnitByList(battleUnits);
+            InitLiveList();
+        }
+
         public void AddBattleUnit(BattleUnit battleUnit)
         {
             if (BattleUnitsList.Contains(battleUnit))
@@ -69,5 +73,12 @@ namespace ApplicationLayer.BattleSystem
             } 
         }
 
+        public void AddBattleUnitByList(List<BattleUnit> battleUnits)
+        {
+            foreach (var battleUnit in battleUnits)
+            {
+                AddBattleUnit(battleUnit);
+            }
+        } 
     }
 }

@@ -1,12 +1,13 @@
 
 using ApplicationLayer.ActionSystem;
 using ApplicationLayer.AISystem;
+using ApplicationLayer.DataSystem;
 
 namespace ApplicationLayer.BattleSystem
 {
     public class BattleUnit
     {
-        public Character Character;
+        public IBattlable BattleCharacter;
         public List<BattleUnit> EnemyList;
         public List<BattleUnit> TeamMateList;
         public BattleUnit? Target;
@@ -15,17 +16,17 @@ namespace ApplicationLayer.BattleSystem
         public double ActionValue = 0;
         public double ActionSpeed;
         public ActionExcutor ActionManager;
-        public bool IsAlive{get{return Character.IsAlive;}}
+        public bool IsAlive{get{return BattleCharacter.IsAlive();}}
         public BattleUnitStage BattleUnitStage;
         public delegate void OnBattleUnitDead(BattleUnit battleUnit);
         public event OnBattleUnitDead? OnBattleUnitDeadEvent;
-        public BattleUnit(Character character)
+        public BattleUnit(IBattlable character)
         {
-            Character = character;
+            BattleCharacter = character;
             EnemyList = new List<BattleUnit>();
             TeamMateList = new List<BattleUnit>();
             BattleUnitStage = BattleUnitStages.WaitFinishStage;
-            BattleAI = character.battleAI;
+            BattleAI = character.GetBattleAI();
             ActionManager = new ActionExcutor();
         }
 

@@ -3,11 +3,6 @@ using ApplicationLayer.BattleSystem;
 
 namespace ApplicationLayer.AISystem
 {
-    public abstract class BaseBattleAI
-    {
-        public abstract void Action(BattleUnit battleUnit);
-        
-    }
 
     public class NormalBattleAI : BaseBattleAI
     {
@@ -29,8 +24,8 @@ namespace ApplicationLayer.AISystem
         {
 
         }
-
-        public override void Action(BattleUnit battleUnit)
+        
+        public void Action(BattleUnit battleUnit)
         {
             if (battleUnit.EnemyList.Count <= 0)
             {
@@ -55,6 +50,11 @@ namespace ApplicationLayer.AISystem
             {
                 battleUnit.Target = battleUnit.EnemyList[new System.Random().Next(0, battleUnit.EnemyList.Count)];
             }
+        }
+
+        public override void Action(object instance)
+        {
+            throw new NotImplementedException();
         }
     }
 
