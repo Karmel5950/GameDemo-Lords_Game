@@ -44,6 +44,14 @@ namespace ApplicationLayer.BattleSystem
             BattleList.Add(newBattle);
             return newBattle;
         }
+
+        public void RunningBattle()
+        {
+            if (BattleRunningEvent != null)
+            {
+                BattleRunningEvent();
+            }
+        }
     }
 
       

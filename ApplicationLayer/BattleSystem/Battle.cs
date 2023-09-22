@@ -1,4 +1,6 @@
 
+using System.Diagnostics;
+
 namespace ApplicationLayer.BattleSystem
 {
       public class Battle
@@ -28,6 +30,7 @@ namespace ApplicationLayer.BattleSystem
             Init();
             isFighting = true;
             BattleSystem.Instance.BattleRunningEvent += Running;
+            Debug.Print("Start Battle");
         }
 
         private void Init()

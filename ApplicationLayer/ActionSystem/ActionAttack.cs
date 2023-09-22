@@ -1,3 +1,6 @@
+using System.Diagnostics;
+using ApplicationLayer.EntitySystem;
+
 namespace ApplicationLayer.ActionSystem
 {
     public class ActionAttack : Action
@@ -16,14 +19,24 @@ namespace ApplicationLayer.ActionSystem
             }
         }
 
-        private ActionAttack(){
-            Name = "Attack";
+        private ActionAttack():base("Attack"){
             Description = "A Normal Attack";
             CoolDown = 0;
-            ExecuteNeedTime = 1000;
+            PreparationDuration = 1000;
         }
 
-        public override void Execute(IActionable actionExcutor)
+        public override void Execute(ActionExcutor actionExcutor)
+        {
+            Debug.Print("Attack");
+        }
+
+
+        public override void InitActorNeededInterface()
+        {
+            ActorNeededInterfaces.Append(typeof(IBaseBattleCharacter));
+        }
+
+        public override void InitTargetNeededInterface()
         {
             throw new NotImplementedException();
         }

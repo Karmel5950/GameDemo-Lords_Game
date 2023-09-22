@@ -5,6 +5,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        Start.Start_1();
+        Start.Start_3();
     }
 }

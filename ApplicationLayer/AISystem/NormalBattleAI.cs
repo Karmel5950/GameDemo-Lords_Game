@@ -1,5 +1,7 @@
 
+using ApplicationLayer.ActionSystem;
 using ApplicationLayer.BattleSystem;
+using ApplicationLayer.EntitySystem;
 
 namespace ApplicationLayer.AISystem
 {
@@ -22,33 +24,33 @@ namespace ApplicationLayer.AISystem
 
         private NormalBattleAI()
         {
-
+            //interfaceTypes.Append<Type>(IBaseBattleCharacter.Type);
         }
         
-        public void Action(BattleUnit battleUnit)
+        private void Action(BattleUnit battleUnit)
         {
+            ActionExcutor ae = battleUnit.BattleCharacter.GetActionExcutor();
             if (battleUnit.EnemyList.Count <= 0)
             {
-                
+                ae.SetAction(ActionWait.Instance);
+                return;
             }
             
             ChangeTarget(battleUnit);
 
-            if (battleUnit.ActionValue < SystemConstants.ActionValueMax)
+            if (ae.action == ActionWait.Instance)
             {
-                battleUnit.ActionValue += battleUnit.ActionSpeed / SystemConstants.GameFramePerSecond;
+                ae.SetAction(ActionAttack.Instance);
             }
-            else
-            {
-                battleUnit.Action();
-                battleUnit.ActionValue = 0;
-            }
+            
+            ae.Excute();
         }
 
         public void ChangeTarget(BattleUnit battleUnit){
-            if (battleUnit.Target == null)
+            ActionExcutor ae = battleUnit.BattleCharacter.GetActionExcutor();
+            if (ae.Target == null)
             {
-                battleUnit.Target = battleUnit.EnemyList[new System.Random().Next(0, battleUnit.EnemyList.Count)];
+                ae.Target = battleUnit.EnemyList[new System.Random().Next(0, battleUnit.EnemyList.Count)];
             }
         }
 

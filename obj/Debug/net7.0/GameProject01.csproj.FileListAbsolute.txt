@@ -12,3 +12,17 @@ C:\CodeWorkSpace\GameProject01\obj\Debug\net7.0\refint\GameProject01.dll
 C:\CodeWorkSpace\GameProject01\obj\Debug\net7.0\GameProject01.pdb
 c:\CodeWorkSpace\GameProject01\obj\Debug\net7.0\GameProject01.genruntimeconfig.cache
 c:\CodeWorkSpace\GameProject01\obj\Debug\net7.0\ref\GameProject01.dll
+C:\CodeWorkSpace\GameProject01\GameDemo-Lords_Game\bin\Debug\net7.0\GameProject01.exe
+c:\CodeWorkSpace\GameProject01\GameDemo-Lords_Game\bin\Debug\net7.0\GameProject01.deps.json
+c:\CodeWorkSpace\GameProject01\GameDemo-Lords_Game\bin\Debug\net7.0\GameProject01.runtimeconfig.json
+C:\CodeWorkSpace\GameProject01\GameDemo-Lords_Game\bin\Debug\net7.0\GameProject01.dll
+C:\CodeWorkSpace\GameProject01\GameDemo-Lords_Game\bin\Debug\net7.0\GameProject01.pdb
+C:\CodeWorkSpace\GameProject01\GameDemo-Lords_Game\obj\Debug\net7.0\GameProject01.GeneratedMSBuildEditorConfig.editorconfig
+C:\CodeWorkSpace\GameProject01\GameDemo-Lords_Game\obj\Debug\net7.0\GameProject01.AssemblyInfoInputs.cache
+C:\CodeWorkSpace\GameProject01\GameDemo-Lords_Game\obj\Debug\net7.0\GameProject01.AssemblyInfo.cs
+C:\CodeWorkSpace\GameProject01\GameDemo-Lords_Game\obj\Debug\net7.0\GameProject01.csproj.CoreCompileInputs.cache
+C:\CodeWorkSpace\GameProject01\GameDemo-Lords_Game\obj\Debug\net7.0\GameProject01.dll
+C:\CodeWorkSpace\GameProject01\GameDemo-Lords_Game\obj\Debug\net7.0\refint\GameProject01.dll
+C:\CodeWorkSpace\GameProject01\GameDemo-Lords_Game\obj\Debug\net7.0\GameProject01.pdb
+c:\CodeWorkSpace\GameProject01\GameDemo-Lords_Game\obj\Debug\net7.0\GameProject01.genruntimeconfig.cache
+c:\CodeWorkSpace\GameProject01\GameDemo-Lords_Game\obj\Debug\net7.0\ref\GameProject01.dll

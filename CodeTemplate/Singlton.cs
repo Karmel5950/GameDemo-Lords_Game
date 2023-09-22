@@ -1,27 +1,33 @@
-namespace CodeTemplate{
-    class Singlton{
-        private static Singlton? _instance = null;
-        public static Singlton Instance
+namespace CodeTemplate
+{
+    public sealed class SingletonLazy
+    {
+        private static volatile SingletonLazy? instance = null;
+        private static readonly object locker = new object();
+
+        private SingletonLazy() { }
+
+        public static SingletonLazy GetInstance()
         {
-            get
+            if (instance == null)
             {
-                if (_instance != null)
+                lock (locker)
                 {
-                    return _instance;
+                    if (instance == null)
+                    {
+                        instance = new SingletonLazy();
+                    }
                 }
-                _instance = new Singlton();
-                return _instance;
             }
+            return instance;
         }
-
-        private Singlton(){
-            
-        }
-
-
     }
 
-
-
+    public sealed class SingletonHungry
+    {
+        private static SingletonHungry _instance = new SingletonHungry();
+        public static SingletonHungry Instance { get { return _instance; } }
+        private SingletonHungry() { }
+    }
 
 }

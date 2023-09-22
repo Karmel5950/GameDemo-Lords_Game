@@ -36,6 +36,7 @@ namespace ApplicationLayer.BattleSystem
                 return;
             }
             BattleUnitsList.Add(battleUnit);
+            battleUnit.Team = this;
         }
         public void RemoveBattleUnit(BattleUnit battleUnit)
         {
@@ -43,6 +44,7 @@ namespace ApplicationLayer.BattleSystem
             {
                 BattleUnitsList.Remove(battleUnit);
             }
+            battleUnit.Team = null;
         }
 
         public void AddEnemyTeam(BattleTeam battleTeam)

@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using ApplicationLayer.BattleSystem;
 
 namespace ApplicationLayer.ActionSystem
@@ -18,16 +19,26 @@ namespace ApplicationLayer.ActionSystem
             }
         }
 
-        private ActionWait(){
-            Name = "Wait";
+        private ActionWait():base("Wait"){
             Description = "Waitting";
             CoolDown = 0;
-            ExecuteNeedTime = 0;
+            PreparationDuration = 0;
         }
 
-        public override void Execute(IActionable actionExcutor)
+        public override void Execute(ActionExcutor actionExcutor)
         {
-            throw new NotImplementedException();
+            Debug.Print(actionExcutor.Actor.GetName() + " is waiting");
+        }
+
+
+        public override void InitActorNeededInterface()
+        {
+            
+        }
+
+        public override void InitTargetNeededInterface()
+        {
+            
         }
     }
 

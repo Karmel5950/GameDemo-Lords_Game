@@ -1,7 +1,6 @@
 
 using ApplicationLayer.ActionSystem;
 using ApplicationLayer.AISystem;
-using ApplicationLayer.DataSystem;
 
 namespace ApplicationLayer.BattleSystem
 {
@@ -13,9 +12,7 @@ namespace ApplicationLayer.BattleSystem
         public BattleUnit? Target;
         public BattleTeam? Team;
         public BaseBattleAI BattleAI;
-        public double ActionValue = 0;
         public double ActionSpeed;
-        public ActionExcutor ActionManager;
         public bool IsAlive{get{return BattleCharacter.IsAlive();}}
         public BattleUnitStage BattleUnitStage;
         public delegate void OnBattleUnitDead(BattleUnit battleUnit);
@@ -27,9 +24,9 @@ namespace ApplicationLayer.BattleSystem
             TeamMateList = new List<BattleUnit>();
             BattleUnitStage = BattleUnitStages.WaitFinishStage;
             BattleAI = character.GetBattleAI();
-            ActionManager = new ActionExcutor();
         }
 
+        
         public void Action()
         {
             BattleAI.Action(this);
@@ -71,6 +68,8 @@ namespace ApplicationLayer.BattleSystem
                 }
             }
         }
+
+    
     }
 
 
