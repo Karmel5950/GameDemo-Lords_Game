@@ -25,7 +25,7 @@ namespace ApplicationLayer.ActionSystem
 
         public void Register()
         {
-            ActionSystem.Instance.Actions.Add(Name, this);
+            ActionManager.Instance.Actions.Add(Name, this);
         }
 
         public abstract void Execute(ActionExcutor actionExcutor);

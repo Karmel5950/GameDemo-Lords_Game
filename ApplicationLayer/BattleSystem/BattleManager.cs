@@ -1,14 +1,14 @@
 
 namespace ApplicationLayer.BattleSystem
 {
-    public class BattleSystem
+    public class BattleManager
     {
-        private static BattleSystem? _instance = null;
+        private static BattleManager? _instance = null;
         public List<Battle> BattleList;
         private int initBattleCount = 10;
         public delegate void BattleRunning();
         public event BattleRunning? BattleRunningEvent;
-        public static BattleSystem Instance
+        public static BattleManager Instance
         {
             get
             {
@@ -16,12 +16,12 @@ namespace ApplicationLayer.BattleSystem
                 {
                     return _instance;
                 }
-                _instance = new BattleSystem();
+                _instance = new BattleManager();
                 return _instance;
             }
         }
 
-        private BattleSystem()
+        private BattleManager()
         {
             BattleList = new List<Battle>();
             for (int i = initBattleCount; i >= 1; i--)

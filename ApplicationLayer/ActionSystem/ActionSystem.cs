@@ -1,10 +1,10 @@
 namespace ApplicationLayer.ActionSystem
 {
-    public class ActionSystem
+    public class ActionManager
     {
-        private static ActionSystem? _instance = null;
+        private static ActionManager? _instance = null;
         public Dictionary<string, Action> Actions = new Dictionary<string, Action>();
-        public static ActionSystem Instance
+        public static ActionManager Instance
         {
             get
             {
@@ -12,7 +12,7 @@ namespace ApplicationLayer.ActionSystem
                 {
                     return _instance;
                 }
-                _instance = new ActionSystem();
+                _instance = new ActionManager();
                 return _instance;
             }
         }
@@ -20,7 +20,7 @@ namespace ApplicationLayer.ActionSystem
         public delegate void OnSystemInit();
         public event OnSystemInit? OnSystemInitEvent;
 
-        private ActionSystem(){
+        private ActionManager(){
             Init();
         }
 

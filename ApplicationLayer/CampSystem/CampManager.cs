@@ -1,10 +1,10 @@
 namespace ApplicationLayer.CampSystem
 {
-    public class CampSystem
+    public class CampManager
     {
         public List<Camp> CampList { get; private set; }
-        private static CampSystem? _instance = null;
-        public static CampSystem Instance
+        private static CampManager? _instance = null;
+        public static CampManager Instance
         {
             get
             {
@@ -12,12 +12,12 @@ namespace ApplicationLayer.CampSystem
                 {
                     return _instance;
                 }
-                _instance = new CampSystem();
+                _instance = new CampManager();
                 return _instance;
             }
         }
 
-        private CampSystem()
+        private CampManager()
         {
             CampList = new List<Camp>();
         }

@@ -29,7 +29,7 @@ namespace ApplicationLayer.BattleSystem
         {
             Init();
             isFighting = true;
-            BattleSystem.Instance.BattleRunningEvent += Running;
+            BattleManager.Instance.BattleRunningEvent += Running;
             Debug.Print("Start Battle");
         }
 
@@ -49,7 +49,7 @@ namespace ApplicationLayer.BattleSystem
         public void Stop()
         {
             isFighting = false;
-            BattleSystem.Instance.BattleRunningEvent -= Running;
+            BattleManager.Instance.BattleRunningEvent -= Running;
         }
 
         private void Running()

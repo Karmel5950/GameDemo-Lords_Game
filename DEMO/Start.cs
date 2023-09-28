@@ -41,14 +41,14 @@ public class Start
 		BattleTeam blueTeam = new BattleTeam();
 		redTeam.AddBattleUnit(new BattleUnit(soldier1));
 		blueTeam.AddBattleUnit(new BattleUnit(soldier2));
-		Battle newBattle = BattleSystem.Instance.CreateBattle();
+		Battle newBattle = BattleManager.Instance.CreateBattle();
 		newBattle.AddNewTeam(redTeam);
 		newBattle.AddNewTeam(blueTeam);
 
 		newBattle.Start();
 		while (newBattle.isFighting)
 		{
-			BattleSystem.Instance.RunningBattle();
+			BattleManager.Instance.RunningBattle();
 		}
 
 	}
